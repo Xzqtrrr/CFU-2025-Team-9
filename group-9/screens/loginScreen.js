@@ -13,10 +13,12 @@ export default function App() {
     <SafeAreaView style={styles.container}>
 
       
+    
       <Text></Text>
-      <Text></Text>
-      <View><Image style={styles.logimage} source={{uri:"https://i.ytimg.com/vi/iO6wwqq_Y7k/hqdefault.jpg"}} />
-      <Text>Untitled</Text></View>
+      <View>
+        <Image style={styles.logimage} source={{uri:"#"}} />
+        <Text>Untitled</Text>
+      </View>
       <Text></Text>
       <View style= {styles.textinput1}>
           <View style={styles.textinput2}>
@@ -35,16 +37,25 @@ export default function App() {
             placeholder="Password"
             />
           </View>
-          <Text>{login}, {pass}</Text>
+          <Text style={{textAlign: 'right', marginRight: 25, color: '#447604'}}>Forgot password?</Text>
       </View>
       
-      <TouchableOpacity onPress={() => navigation.navigate('Tabs')}>
-        <Text>Login</Text>
+      <Text></Text>
+      <TouchableOpacity 
+      
+      style= {{backgroundColor: '#F1F1F1', width: 301, height: 50, borderRadius: 25, justifyContent: 'center'}}
+      onPress={() => navigation.navigate('Tabs', {
+        screen: 'Home',
+        params: {name: login}})}>
+        <Text style={{ textAlign: 'center'}}>Login</Text>
       </TouchableOpacity>
       <Text></Text>
       <Text></Text>
+      <Text>New to Ventreo? <Text style={{color: '#447604'}}>Sign Up</Text></Text>
       <Text></Text>
-      <Text></Text>
+
+        <></>
+
     </SafeAreaView>
   );
 }

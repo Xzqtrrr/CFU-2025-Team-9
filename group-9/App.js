@@ -23,7 +23,7 @@ const Tabs = createBottomTabNavigator();
 function MainTabs (){
   return(
     <Tabs.Navigator>
-      <Tabs.Screen name="Home" component={HomeScreen } />
+      <Tabs.Screen name="Home" component={HomeScreen} options={{headerShown: false}} />
       <Tabs.Screen name="ActStart" component={ActiveStartupsScreen} />
       <Tabs.Screen name="Settings" component={SettingsScreen} />
     </Tabs.Navigator>
@@ -36,7 +36,7 @@ export default function App() {
    <NavigationContainer>
      <Stack.Navigator initialRouteName="Login" >
        <Stack.Screen name="Login" component={LoginScreen}  options={{headerShown: false}}/>
-       <Stack.Screen name="Tabs" component={MainTabs} />
+       <Stack.Screen name="Tabs" component={MainTabs} options={{headerShown: false}}/>
        <Stack.Screen name="StList" component={ListOfStartupsScreen} />
      </Stack.Navigator>
    </NavigationContainer>
