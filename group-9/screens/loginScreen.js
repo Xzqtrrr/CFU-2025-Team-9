@@ -21,6 +21,7 @@ export default function App() {
       <View style= {styles.textinput1}>
           <View style={styles.textinput2}>
             <TextInput 
+            style= {styles.textinput3}
             value={login}
             onChangeText={setLogin}
             placeholder="Login"
@@ -28,6 +29,7 @@ export default function App() {
           </View>
           <View style={styles.textinput2}>
             <TextInput 
+            style= {styles.textinput3}
             value={pass}
             onChangeText={setPass}
             placeholder="Password"
@@ -50,7 +52,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#F9F9F9',
     alignItems: 'center',
     justifyContent: 'space-around',
   },
@@ -65,11 +67,15 @@ const styles = StyleSheet.create({
     width: '90%'
 },
   textinput2: {
-    width: '90%', 
+    width: '100%', 
     textAlign: 'center',
     justifyContent: 'spase-around',
     height:40,
-    backgroundColor: 'lightgray',
-    marginTop: 5,
+    backgroundColor: '#E1E1E1',
+    marginTop: 10,
+    borderRadius: 50
+  },
+    textinput3: {
+    color: "#909090"
   },
 });
