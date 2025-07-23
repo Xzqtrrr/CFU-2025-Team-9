@@ -13,14 +13,17 @@ export default function App() {
     <SafeAreaView style={styles.container}>
 
       
+    
       <Text></Text>
-      <Text></Text>
-      <View><Image style={styles.logimage} source={{uri:"https://i.ytimg.com/vi/iO6wwqq_Y7k/hqdefault.jpg"}} />
-      <Text>Untitled</Text></View>
+      <View>
+        <Image style={styles.logimage} source={{uri:"#"}} />
+        <Text>Untitled</Text>
+      </View>
       <Text></Text>
       <View style= {styles.textinput1}>
           <View style={styles.textinput2}>
             <TextInput 
+            style= {styles.textinput3}
             value={login}
             onChangeText={setLogin}
             placeholder="Login"
@@ -28,21 +31,31 @@ export default function App() {
           </View>
           <View style={styles.textinput2}>
             <TextInput 
+            style= {styles.textinput3}
             value={pass}
             onChangeText={setPass}
             placeholder="Password"
             />
           </View>
-          <Text>{login}, {pass}</Text>
+          <Text style={{textAlign: 'right', marginRight: 25, color: '#447604'}}>Forgot password?</Text>
       </View>
       
-      <TouchableOpacity onPress={() => navigation.navigate('Tabs')}>
-        <Text>Login</Text>
+      <Text></Text>
+      <TouchableOpacity 
+      
+      style= {{backgroundColor: '#F1F1F1', width: 301, height: 50, borderRadius: 25, justifyContent: 'center'}}
+      onPress={() => navigation.navigate('Tabs', {
+        screen: 'Home',
+        params: {name: login}})}>
+        <Text style={{ textAlign: 'center'}}>Login</Text>
       </TouchableOpacity>
       <Text></Text>
       <Text></Text>
+      <Text>New to Ventreo? <Text style={{color: '#447604'}}>Sign Up</Text></Text>
       <Text></Text>
-      <Text></Text>
+
+        <></>
+
     </SafeAreaView>
   );
 }
@@ -50,7 +63,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#F9F9F9',
     alignItems: 'center',
     justifyContent: 'space-around',
   },
@@ -65,11 +78,15 @@ const styles = StyleSheet.create({
     width: '90%'
 },
   textinput2: {
-    width: '90%', 
+    width: '100%', 
     textAlign: 'center',
     justifyContent: 'spase-around',
     height:40,
-    backgroundColor: 'lightgray',
-    marginTop: 5,
+    backgroundColor: '#E1E1E1',
+    marginTop: 10,
+    borderRadius: 50
+  },
+    textinput3: {
+    color: "#909090"
   },
 });
