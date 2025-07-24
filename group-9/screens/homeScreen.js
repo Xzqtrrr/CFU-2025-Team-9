@@ -10,8 +10,8 @@ function CustomButton (prop) {
       const navigation = useNavigation();
       return(
 
-      <View style={prop.style}>
-        <TouchableOpacity onPress={() => navigation.navigate('StList')}>
+      <View style={styles.btn}>
+        <TouchableOpacity style={styles.btn2} onPress={() => navigation.navigate('StList')}>
           <Text>{prop.name}</Text>
         </TouchableOpacity>
       </View>
@@ -20,7 +20,7 @@ function CustomButton (prop) {
 };
 
 
-export default function App(prop) {
+export default function Home(prop) {
     
   const navigation = useNavigation();
 
@@ -32,31 +32,32 @@ export default function App(prop) {
 
     <View style={styles.container}>
     
-          <Image style={styles.prof_img}/>
+          <Image style={styles.prof_img} source={require('../assets/avar.png')}/>
           <Text style= { {fontSize: 44}} > Hi, {prop.route.params.name}!</Text>
           <Text style= { {fontSize: 20}}>What are you</Text>
           <Text style= { {fontSize: 20}}>going to look for today?</Text>
 
         <View style={styles.lists1}>
           <View style={styles.lists2}>
-            <CustomButton style={styles.btn} name={'sig1'}/>
-            <CustomButton style={styles.btn} name={'sig2'}/>
+            <CustomButton name={'sig1'}/>
+            <CustomButton name={'sig2'}/>
           </View>
           <View style={styles.lists2}>
           
-            <CustomButton style={styles.btn} name={'sig1'}/>
-            <CustomButton style={styles.btn} name={'sig2'}/>
+            <CustomButton name={'sig1'}/>
+            <CustomButton name={'sig2'}/>
           </View>
           <View style={styles.lists2}>
 
-            <CustomButton style={styles.btn} name={'sig1'}/>
-            <CustomButton style={styles.btn} name={'sig2'}/>
+            <CustomButton name={'sig1'}/>
+            <CustomButton name={'sig2'}/>
           </View>
         </View>
     </View>
 
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
@@ -70,6 +71,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 15,
+    margin: 5,
+  },
+    btn2: {
+    backgroundColor: "#DDD",
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 15,
     width: 110,
     height: 110,
     margin: 5,
@@ -77,7 +85,6 @@ const styles = StyleSheet.create({
   prof_img: {
     width: 151,
     height: 151,
-    backgroundColor: 'black',
     marginTop: 70,
     
     borderRadius: 75,

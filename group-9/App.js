@@ -14,18 +14,69 @@ import ActiveStartupsScreen from './screens/activeStartupsScreen.js';
 import ListOfStartupsScreen from './screens/listOfStartupsScreen.js';
 
 
+import Ionicons from '@expo/vector-icons/Ionicons';
+
+
+
+
+
 
 const Stack = createNativeStackNavigator();
 const Tabs = createBottomTabNavigator();
 
+/*
 
+function MainTabs() {
+  return (
+      <Tabs.Navigator screenOptions={({ route }) => ({
+        headerShown: false,
+        tabBarIcon: ({ focused, color, size }) => {
+            let iconName;
+
+            if (route.name === 'Feed') {
+              iconName = focused ? 'home' : 'home-outline';
+            } else if (route.name === 'New') {
+              iconName = focused ? 'add-circle' : 'add-circle-outline';
+            } else if (route.name === 'Profile') {
+              iconName = focused ? 'person' : 'person-outline';
+            }
+
+            return <Ionicons name={iconName} size={size} color={color}/>
+        },
+        tabBarActiveTintColor: '#007aff',
+        tabBarInactiveTintColor: 'gray',
+      })}>
+        <Tabs.Screen name="Feed" component={HomeScreen} />
+        <Tabs.Screen name="New" component={NewPostScreen} />
+        <Tabs.Screen name="Profile" component={ProfileScreen} />
+      </Tabs.Navigator>
+  );
+}
+*/
 
 function MainTabs (){
   return(
-    <Tabs.Navigator>
+    <Tabs.Navigator screenOptions={({ route }) => ({
+        headerShown: false,
+        tabBarIcon: ({ focused, color, size }) => {
+            let iconName;
+
+            if (route.name === 'Home') {
+              iconName = focused ? 'home' : 'home-outline';
+            } else if (route.name === 'Active Startups') {
+              iconName = focused ? 'trending-up' : 'trending-up-outline';
+            } else if (route.name === 'Profile') {
+              iconName = focused ? 'person' : 'person-outline';
+            }
+
+            return <Ionicons name={iconName} size={size} color={color}/>
+        },
+        tabBarActiveTintColor: '#007aff',
+        tabBarInactiveTintColor: 'gray',
+      })}>
       <Tabs.Screen name="Home" component={HomeScreen} options={{headerShown: false}} />
-      <Tabs.Screen name="ActStart" component={ActiveStartupsScreen} />
-      <Tabs.Screen name="Settings" component={SettingsScreen} />
+      <Tabs.Screen name="Active Startups" component={ActiveStartupsScreen} />
+      <Tabs.Screen name="Profile" component={SettingsScreen} />
     </Tabs.Navigator>
   )
 }

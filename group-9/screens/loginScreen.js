@@ -16,38 +16,38 @@ export default function App() {
     
       <Text></Text>
       <View>
-        <Image style={styles.logimage} source={{uri:"#"}} />
-        <Text>Untitled</Text>
+        <Image style={styles.logimage} source={require('../assets/treeicon.png')} />
+        <Text style= {{textAlign: 'center'}}>Ventreo</Text>
       </View>
       <Text></Text>
       <View style= {styles.textinput1}>
           <View style={styles.textinput2}>
             <TextInput 
-            style= {styles.textinput3}
-            value={login}
-            onChangeText={setLogin}
-            placeholder="Login"
+              style= {styles.textinput3}
+              value={login}
+              onChangeText={setLogin}
+              placeholder="Login"
             />
           </View>
           <View style={styles.textinput2}>
             <TextInput 
-            style= {styles.textinput3}
-            value={pass}
-            onChangeText={setPass}
-            placeholder="Password"
+              style= {styles.textinput3}
+              value={pass}
+              onChangeText={setPass}
+              placeholder="Password"
             />
           </View>
-          <Text style={{textAlign: 'right', marginRight: 25, color: '#447604'}}>Forgot password?</Text>
+          <Text style={{textAlign: 'right', color: '#447604'}}>Forgot password?</Text>
       </View>
       
-      <Text></Text>
       <TouchableOpacity 
       
-      style= {{backgroundColor: '#F1F1F1', width: 301, height: 50, borderRadius: 25, justifyContent: 'center'}}
-      onPress={() => navigation.navigate('Tabs', {
+        style= {{backgroundColor: '#F1F1F1', width: 301, height: 50, borderRadius: 25, justifyContent: 'center'}}
+        onPress={() => navigation.navigate('Tabs', {
         screen: 'Home',
-        params: {name: login}})}>
-        <Text style={{ textAlign: 'center'}}>Login</Text>
+        params: {name: login}})}
+        >
+          <Text style={{ textAlign: 'center'}}>Login</Text>
       </TouchableOpacity>
       <Text></Text>
       <Text></Text>
@@ -71,12 +71,11 @@ const styles = StyleSheet.create({
   logimage: {
     width: 150, 
     height: 150,
-    backgroundColor: 'black'
   },
   textinput1: {
     justifyContent: 'center',
     width: '90%'
-},
+  },
   textinput2: {
     width: '100%', 
     textAlign: 'center',
@@ -86,7 +85,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     borderRadius: 50
   },
-    textinput3: {
+  textinput3: {
     color: "#909090"
   },
 });
