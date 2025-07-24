@@ -1,12 +1,39 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import React from "react";
+import { StyleSheet, Text, View, FlatList, ScrollView } from "react-native";
+
+import { DATA } from "../databases/vars";
+
+function CustomButton(prop) {
+  const navigation = useNavigation();
+  return (
+    <View style={styles.btn}>
+      <TouchableOpacity
+        style={styles.btn2}
+        onPress={() => navigation.navigate("soon")}
+      >
+        <Text>{prop.name}</Text>
+      </TouchableOpacity>
+    </View>
+  );
+}
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!123 rsgln</Text>
-      <StatusBar style="auto" />
+      <FlatList
+        style={{ marginTop: 120 }}
+        horizontal={false}
+        numColumns={"2"}
+        data={DATA}
+        renderItem={({ item }) => {
+          return (
+            <View>
+              <Text style={styles.listItem}>{item.text}</Text>
+            </View>
+          );
+        }}
+      />
     </View>
   );
 }
@@ -14,8 +41,15 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  listItem: {
+    width: 150,
+    height: 200,
+    margin: 10,
+    borderRadius: 25,
+    backgroundColor: "lightgrey",
   },
 });

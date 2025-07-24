@@ -1,9 +1,9 @@
 import { TouchableOpacity, View, SafeAreaView, Text, StyleSheet, Image, TextInput } from "react-native";
-
+import { AuthContext } from '../databases/vars.js';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 
 import { useState } from "react";
-export default function App() {
+export default function Login() {
     
   const navigation = useNavigation();
   
