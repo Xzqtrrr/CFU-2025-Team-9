@@ -46,20 +46,18 @@ export default function App() {
     <View>
                 <View style={styles.taskbar}>
                     <TouchableOpacity onPress={()=> navigation.goBack()}><Text style={styles.backbtn}>{'<'}Back</Text></TouchableOpacity>
-                    <Text style={styles.Name}>Terms of Use</Text>
+                    <Text style={styles.Name}>Privacy Policy</Text>
                 </View>
                 <View style={styles.textbox}>
                     <Text style={styles.text}>
-                        Welcome to Ventreo. 
-These terms govern your use of our marketplace app. By accessing or using the platform, you agree to comply with the following:{"\n"}
-Eligibility{"\n"}    Users must be 18 years or older or have legal parental or guardian consent. Access may be restricted or suspended for accounts found to be misrepresenting age or identity.{"\n"}
-User Conduc{"\n"}    Users agree to engage respectfully with others and refrain from abusive, deceptive, or disruptive behavior. This includes harassment, impersonation, and attempts to manipulate pricing, reviews, or transactions.{"\n"}
-Account Responsibilities{"\n"}    Each user is responsible for securing their login credentials and monitoring account activity. Unauthorized access must be reported immediately. Shared or impersonated accounts are not permitted.{"\n"}
-Transactions{"\n"}    All transactions are executed between users. The platform facilitates listings and communications but does not act as a seller, buyer, or payment guarantor. Disputes should be resolved directly between parties when possible.{"\n"}
-Platform Integrity{"\n"}    Users must not interfere with platform functionality, attempt to breach security measures, or exploit bugs or loopholes. Any automated or scripted usage must be pre-approved.{"\n"}
-Modification and Suspension{"\n"}    The platform reserves the right to modify features, suspend access, or terminate accounts that breach these terms or disrupt service for others.{"\n"}
-Third-party Links and Tools{"\n"}    Certain functions may link to third-party services. Use of these features is subject to their respective terms, and we are not liable for their content or actions.{"\n"}
-Updates to Terms{"\n"}    These Terms of Use may be updated from time to time. Continued use of the app after changes implies acceptance of the revised terms.{"\n"}
+                       Ventreo is committed to protecting your privacy. This policy outlines how we handle personal information when you use our marketplace app.{"\n"}
+Information We Collect {"\n"}     We may collect basic information such as your name, email address, contact details, and account activity. Technical data such as device type, operating system, and app usage may also be collected to improve performance and security.{"\n"}
+How We Use Your Information{"\n"}     We use your data to operate, maintain, and improve the app experience. Examples include account verification, customer support, and ensuring the integrity of transactions and listings.{"\n"}
+Data Sharing{"\n"}     We do not sell your personal data. We may share it with trusted service providers who support platform operations (e.g., hosting, analytics). These providers are obligated to protect your information.{"\n"}
+Your Control{"\n"}     You can access, update, or delete your account information through your settings. Requests related to data access or removal can be made via [support@email.com].{"\n"}
+Data Retention{"\n"}     We retain data as needed to provide services and meet legal obligations. Inactive accounts may have their data deleted after a period of non-use.{"\n"}
+Security{"\n"}     We implement reasonable measures to protect your data against unauthorized access or loss. However, no system is completely secure.{"\n"}
+Changes to This Policy{"\n"}     This Privacy Policy may be updated occasionally. Any material changes will be communicated through the app or email.{"\n"}
                     </Text>
                 </View>
     </View>

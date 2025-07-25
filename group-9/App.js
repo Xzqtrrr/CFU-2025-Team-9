@@ -13,6 +13,7 @@ import ActiveStartupsScreen from "./screens/activeStartupsScreen.js";
 import ListOfStartupsScreen from "./screens/listOfStartupsScreen.js";
 import AboutScreen from './screens/AboutScreen.js'
 import TermsOfUseScreen from './screens/TermsOfUseScreen.js'
+import PrivacyPolicyScreen from './screens/PrivacyPolicyScreen.js'
 
 import Ionicons from "@expo/vector-icons/Ionicons";
 
@@ -101,6 +102,7 @@ export default function () {
         <Stack.Screen name="soon" component={soon} />
         <Stack.Screen name="About" component={AboutScreen} options={{headerShown: false}}/>
         <Stack.Screen name="Terms" component={TermsOfUseScreen} options={{headerShown: false}}/>
+        <Stack.Screen name="PrivacyPolicy" component={PrivacyPolicyScreen} options={{headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
