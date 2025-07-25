@@ -1,19 +1,27 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View, FlatList, TouchableOpacity, Image } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  FlatList,
+  TouchableOpacity,
+  Image,
+} from "react-native";
+
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
 
 import Icon from "react-native-vector-icons/Ionicons";
-import {DATA} from "../databases/vars";
+import { DATA } from "../databases/vars";
 
-function CustomButton(prop) {     
-  const navigation = useNavigation();
+function CustomButton(prop) {
   return (
     <View style={styles.btn}>
       <TouchableOpacity
         style={styles.btn2}
         onPress={() => navigation.navigate("soon")}
       >
-        <Text>{prop.name}</Text> 
+        <Text>{prop.name}</Text>
       </TouchableOpacity>
     </View>
   );
@@ -41,13 +49,13 @@ function CustomButton(prop) {
 //   );
 // }
 
-
 export default function App(prop) {
+  
+  const navigation = useNavigation();
   const filteredData = DATA.filter(
     (item) => item.category === prop.route.params.cat
-  );
-return (
-  
+  );  
+  return (
     <View style={styles.container}>
       <FlatList
         style={{ marginTop: 120 }}
@@ -55,12 +63,13 @@ return (
         numColumns={"2"}
         data={filteredData}
         renderItem={({ item }) => {
-
           const a = (144 * (item.total - item.left)) / item.total;
           return (
             <View style={styles.listItem}>
-              <TouchableOpacity>
-                <Image style={styles.listItemImage} />
+              <TouchableOpacity  onPress={() =>
+                  navigation.navigate("StartupScreen", { num: item.key })
+                }>
+                <Image style={styles.listItemImage} source={item.image} />
                 <View style={styles.listItemName}>
                   <Icon name={"person-outline"} size={16} color="black" />
                   <Text style={styles.listItem1}>{item.nameOfStartuper}</Text>
@@ -76,39 +85,40 @@ return (
                   <View
                     style={{
                       width: "100%",
+
+                      borderRadius: 3,
                       height: 5,
                       position: "absolute",
-                      backgroundColor: "black",
+                      backgroundColor: "#A1A1A1",
                     }}
                   ></View>
                   <View
                     style={{
+                      marginBottom: 1,
+                      marginLeft: 1,
+                      borderRadius: 3,
                       width: a,
                       height: 5,
                       position: "absolute",
-                      backgroundColor: "green",
+                      backgroundColor: "#447604",
                     }}
                   ></View>
                 </View>
               </TouchableOpacity>
             </View>
           );
-        }
-        }
+        }}
       />
     </View>
   );
 }
 
-
-
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F9F9F9',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#F9F9F9",
+    alignItems: "center",
+    justifyContent: "center",
   },
   listItem: {
     width: 160,
@@ -138,5 +148,4 @@ const styles = StyleSheet.create({
   listNameOfProject: {
     width: "80%",
   },
-
 });

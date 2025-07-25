@@ -1,11 +1,14 @@
 import { StatusBar } from "expo-status-bar";
 import { Image, StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/Ionicons";
 
 function SettButton(prop) {
+  
+  const navigation = useNavigation();
   return (
     <View>
-      <TouchableOpacity style={styles.settButton}>
+      <TouchableOpacity style={styles.settButton} onPress={() => navigation.navigate('soon')}>
         <Icon name={prop.icon} size={16} color="black" />
         <Text style={{ marginLeft: 10 }}>{prop.text}</Text>
       </TouchableOpacity>
@@ -27,6 +30,7 @@ function UnderLine() {
 }
 
 export default function Profile() {
+  
   return (
     <View style={styles.container}>
       <Image style={styles.prof_img} source={require("../assets/avar.png")} />

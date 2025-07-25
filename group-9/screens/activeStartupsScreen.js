@@ -10,23 +10,26 @@ import {
 } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
+
 import { DATA } from "../databases/vars";
 
-function CustomButton(prop) {
-  const navigation = useNavigation();
-  return (
-    <View style={styles.btn}>
-      <TouchableOpacity
-        style={styles.btn2}
-        onPress={() => navigation.navigate("soon")}
-      >
-        <Text>{prop.name}</Text>
-      </TouchableOpacity>
-    </View>
-  );
-}
+// function CustomButton(prop) {
+//   const navigation = useNavigation();
+//   return (
+//     <View style={styles.btn}>
+//       <TouchableOpacity
+//         style={styles.btn2}
+//         onPress={() => navigation.navigate("soon")}
+//       >
+//         <Text>{prop.name}</Text>
+//       </TouchableOpacity>
+//     </View>
+//   );
+// }
 
 export default function App() {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <FlatList
@@ -38,8 +41,12 @@ export default function App() {
           const a = (144 * (item.total - item.left)) / item.total;
           return (
             <View style={styles.listItem}>
-              <TouchableOpacity>
-                <Image style={styles.listItemImage} />
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.navigate("StartupScreen", { num: item.key })
+                }
+              >
+                <Image style={styles.listItemImage} source={item.image} />
                 <View style={styles.listItemName}>
                   <Icon name={"person-outline"} size={16} color="black" />
                   <Text style={styles.listItem1}>{item.nameOfStartuper}</Text>
@@ -55,17 +62,22 @@ export default function App() {
                   <View
                     style={{
                       width: "100%",
+
+                      borderRadius: 3,
                       height: 5,
                       position: "absolute",
-                      backgroundColor: "black",
+                      backgroundColor: "#A1A1A1",
                     }}
                   ></View>
                   <View
                     style={{
+                      marginBottom: 1,
+                      marginLeft: 1,
+                      borderRadius: 3,
                       width: a,
                       height: 5,
                       position: "absolute",
-                      backgroundColor: "green",
+                      backgroundColor: "#447604",
                     }}
                   ></View>
                 </View>
