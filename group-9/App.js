@@ -11,6 +11,8 @@ import HomeScreen from "./screens/homeScreen.js";
 import SettingsScreen from "./screens/settingsScreen.js";
 import ActiveStartupsScreen from "./screens/activeStartupsScreen.js";
 import ListOfStartupsScreen from "./screens/listOfStartupsScreen.js";
+import AboutScreen from './screens/AboutScreen.js'
+import TermsOfUseScreen from './screens/TermsOfUseScreen.js'
 
 import Ionicons from "@expo/vector-icons/Ionicons";
 
@@ -80,7 +82,7 @@ function MainTabs() {
   );
 }
 
-export default function App() {
+export default function () {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Login">
@@ -97,6 +99,8 @@ export default function App() {
 
         <Stack.Screen name="StList" component={ListOfStartupsScreen} />
         <Stack.Screen name="soon" component={soon} />
+        <Stack.Screen name="About" component={AboutScreen} options={{headerShown: false}}/>
+        <Stack.Screen name="Terms" component={TermsOfUseScreen} options={{headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -2,6 +2,29 @@
   "expo": {
     "name": "group-9",
     "slug": "group-9",
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "plugins": [
+      [
+        "expo-font",
+        {
+          "fonts": ["./assets/fonts/e-Ukraine-Light.otf"],
+          "android": {
+            "fonts": [
+              {
+                "fontFamily": "e-Ukraine",
+                "fontDefinitions": [
+                  {
+                    "path": "./assets/fonts/e-Ukraine-Light.otf"
+                  },
+                  {
+                    "path": "./assets/fonts/e-Ukraine-Regular.otf"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    ]
   }
 }
