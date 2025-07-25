@@ -17,6 +17,19 @@ import { DATA } from "../databases/vars";
 function CustomButton(prop) {
   return (
     <View style={styles.btn}>
+      <View>
+        <View
+          style={{
+            position: "absolute",
+            width: "100%",
+            backgroundColor: "black",
+          }}
+        >
+          <TouchableOpacity style={{ width: 75 }} onPress={navigation.goBack}>
+            <Text style={{ marginTop: 62, marginLeft: 20 }}>{"<"} Back</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
       <TouchableOpacity
         style={styles.btn2}
         onPress={() => navigation.navigate("soon")}
@@ -50,15 +63,26 @@ function CustomButton(prop) {
 // }
 
 export default function App(prop) {
-  
   const navigation = useNavigation();
   const filteredData = DATA.filter(
     (item) => item.category === prop.route.params.cat
-  );  
+  );
   return (
     <View style={styles.container}>
+      <View style={{ flexDirection: "row", justifyContent: "center" }}></View>
+      <View>
+        <Text style={{ position: "relative", marginTop: 55 }}>
+          {prop.route.params.cat}
+        </Text>
+      </View>
+      <View style={{ width: "100%" }}>
+        <TouchableOpacity style={{ position: "absolute", width: 75 }} onPress={navigation.goBack}>
+          <Text style={{ marginTop: -20, marginLeft: 20 }}>{"<"} Back</Text>
+        </TouchableOpacity>
+      </View>
+
       <FlatList
-        style={{ marginTop: 120 }}
+        style={{ marginTop: 60 }}
         horizontal={false}
         numColumns={"2"}
         data={filteredData}
@@ -66,9 +90,11 @@ export default function App(prop) {
           const a = (144 * (item.total - item.left)) / item.total;
           return (
             <View style={styles.listItem}>
-              <TouchableOpacity  onPress={() =>
+              <TouchableOpacity
+                onPress={() =>
                   navigation.navigate("StartupScreen", { num: item.key })
-                }>
+                }
+              >
                 <Image style={styles.listItemImage} source={item.image} />
                 <View style={styles.listItemName}>
                   <Icon name={"person-outline"} size={16} color="black" />

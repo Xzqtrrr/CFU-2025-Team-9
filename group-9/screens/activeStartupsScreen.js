@@ -32,8 +32,19 @@ export default function App() {
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
+      <View style={{ flexDirection: "row", justifyContent: "center" }}></View>
+            <View>
+              <Text style={{ position: "relative", marginTop: 55 }}>
+                All startups
+              </Text>
+            </View>
+            <View style={{ width: "100%" }}>
+              <TouchableOpacity style={{ position: "absolute", width: 75 }} onPress={navigation.goBack}>
+                <Text style={{ marginTop: -20, marginLeft: 20 }}>{"<"} Back</Text>
+              </TouchableOpacity>
+            </View>
       <FlatList
-        style={{ marginTop: 120 }}
+        style={{ marginTop: 50 }}
         horizontal={false}
         numColumns={"2"}
         data={DATA}

@@ -60,7 +60,6 @@ export default function App(prop) {
           <View
             style={{
               width: "100%",
-              //`${a}`
               borderRadius: 3,
               height: 5,
               position: "relative",
