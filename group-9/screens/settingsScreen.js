@@ -14,8 +14,21 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#F9F9F9",
+    alignItems: "center",
+  },
+
+  prof_img: {
+    width: 151,
+    height: 151,
+    marginTop: 95,
+
+    borderRadius: 75,
+  },
+  settButton: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginTop: 10,
+    marginLeft: "10%",
   },
 });
