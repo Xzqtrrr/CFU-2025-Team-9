@@ -99,7 +99,8 @@ export default function () {
           options={{ headerShown: false }}
         />
 
-        <Stack.Screen name="StList" component={ListOfStartupsScreen} />
+        <Stack.Screen name="StList" component={ListOfStartupsScreen} 
+          options={{ headerShown: false }}/>
         <Stack.Screen name="soon" component={soon} />
         <Stack.Screen name="StartupScreen" component={StartupScreen} options={{ headerShown: false }} />
         <Stack.Screen name="About" component={AboutScreen} options={{headerShown: false}}/>
