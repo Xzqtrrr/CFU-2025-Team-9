@@ -12,7 +12,7 @@ function SettButton(prop) {
     <View>
       <TouchableOpacity style={styles.settButton} onPress={()=> navigation.navigate("About")}>
         <Icon name={prop.icon} size={16} color="black" />
-        <Text style={{ marginLeft: 10 }}>{prop.text}</Text>
+        <Text style={{ marginLeft: 10, fontFamily: "e-U-r", fontSize: 15 }}>{prop.text}</Text>
       </TouchableOpacity>
     </View>
   );
@@ -35,8 +35,8 @@ export default function Profile() {
   useEffect(()=>{
     async function loadFont() {
       await Font.loadAsync({
-        'e-Ukraine-Light': require('../assets/fonts/e-Ukraine-Light.otf'),
-        'e-Ukraine-Bold': require('../assets/fonts/e-Ukraine-Bold.otf'),
+        'e-U-r': require('../assets/fonts/e-Ukraine-Regular.otf'),
+        'e-U-b': require('../assets/fonts/e-Ukraine-Bold.otf'),
       });
     };
 
@@ -49,7 +49,7 @@ export default function Profile() {
       <Text style={styles.nickname}> User </Text>
       <View style={{ marginBottom: 30, flexDirection: "row" }}>
         <Icon name={"call-outline"} size={16} color="black" />
-        <Text> +141141414141</Text>
+        <Text style={styles.number}> +141141414141</Text>
       </View> 
 
       <View style={{ width: "100%" }}>
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
     width: 151,
     height: 151,
     marginTop: 95,
-
+    opacity: 0.75,
     borderRadius: 75,
   },
   settButton: {
@@ -98,6 +98,10 @@ const styles = StyleSheet.create({
   },
   nickname:{
     fontSize: 25, 
-    fontFamily: "e-Ukraine-Bold" 
+    fontFamily: "e-U-b" 
+  },
+  number:{
+    fontFamily: "e-U-r",
+    fontSize: 13
   }
 });

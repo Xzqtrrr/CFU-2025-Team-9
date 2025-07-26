@@ -63,15 +63,15 @@ function MainTabs() {
 
           if (route.name === "Home") {
             iconName = focused ? "home" : "home-outline";
-          } else if (route.name === "AddStartup") {
-            iconName = focused ? "trending-up" : "trending-up-outline";
+          } else if (route.name === "Create StartUp") {
+            iconName = focused ? "add" : "add-outline";
           } else if (route.name === "Profile") {
             iconName = focused ? "person" : "person-outline";
           } 
 
           return <Ionicons name={iconName} size={size} color={color} />;
         },
-        tabBarActiveTintColor: "#007aff",
+        tabBarActiveTintColor: "#447604",
         tabBarInactiveTintColor: "gray",
       })}
     >
@@ -80,7 +80,7 @@ function MainTabs() {
         component={HomeScreen}
         options={{ headerShown: false }}
       />
-      <Tabs.Screen name="AddStartup" component={AddStartup} />
+      <Tabs.Screen name="Create StartUp" component={AddStartup} />
       <Tabs.Screen name="Profile" component={SettingsScreen} />
     </Tabs.Navigator>
   );
