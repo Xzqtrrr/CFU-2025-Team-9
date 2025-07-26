@@ -46,7 +46,7 @@ export default function Profile() {
   return (
     <View style={styles.container}>
       <Image style={styles.prof_img} source={require("../assets/avar.png")} />
-      <Text style={styles.nickname}> @Name </Text>
+      <Text style={styles.nickname}> User </Text>
       <View style={{ marginBottom: 30, flexDirection: "row" }}>
         <Icon name={"call-outline"} size={16} color="black" />
         <Text> +141141414141</Text>

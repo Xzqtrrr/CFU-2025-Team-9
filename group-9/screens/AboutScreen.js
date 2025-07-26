@@ -48,7 +48,7 @@ export default function App() {
             </View>
         <SettButton text={">    Terms of Use"} destination={"Terms"}/>
         <UnderLine/>
-        <SettButton text={">    Privacy Policy"}/>
+        <SettButton text={">    Privacy Policy"} destination={"PrivacyPolicy"}/>
         <UnderLine/>
         <SettButton text={">    Intellectual Property Policy"}/>
         <UnderLine/>
