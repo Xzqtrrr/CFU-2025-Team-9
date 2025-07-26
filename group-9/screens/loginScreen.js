@@ -9,11 +9,27 @@ import {
 } from "react-native";
 import { AuthContext } from "../databases/vars.js";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
+import { useEffect } from "react";
+import * as Font from "expo-font";
 
 import { useState } from "react";
 export default function Login() {
+  useEffect(()=>{
+            async function loadFont() {
+              await Font.loadAsync({
+                'e-Ukraine-Light': require('../assets/fonts/e-Ukraine-Light.otf'),
+                'e-Ukraine-Medium': require('../assets/fonts/e-Ukraine-Medium.otf'),
+                'e-Ukraine-Regular': require('../assets/fonts/e-Ukraine-Regular.otf'),
+                'e-Ukraine-Bold': require('../assets/fonts/e-Ukraine-Bold.otf'),
+                'e-Uh-logo': require('../assets/fonts/e-UkraineHead-LOGO.otf'),
+                'e-Ukraine-ul': require('../assets/fonts/e-Ukraine-UltraLight.otf'),
+                'e-U-t': require('../assets/fonts/e-Ukraine-Thin.otf')
+              });
+            };
+        
+      loadFont();
+  }, []);
   const navigation = useNavigation();
-
   const [login, setLogin] = useState("");
   const [pass, setPass] = useState("");
   return (
@@ -24,7 +40,7 @@ export default function Login() {
           style={styles.logimage}
           source={require("../assets/treeicon.png")}
         />
-        <Text style={{ textAlign: "center" }}>Ventreo</Text>
+        <Text style={{fontFamily: 'e-Uh-logo', textAlign: "center", fontSize: 14, marginTop:-15, marginBottom: 10}}>Ventreo</Text>
       </View>
       <Text></Text>
       <View style={styles.textinput1}>
@@ -44,9 +60,11 @@ export default function Login() {
             placeholder="Password"
           />
         </View>
-        <Text style={{ textAlign: "right", color: "#447604" }}>
-          Forgot password?
-        </Text>
+        <View style={{opacity: 0.75}}>
+          <Text style={{ textAlign: "right", color: "#447604", fontFamily: "e-Ukraine-ul", fontSize: 10, marginTop: 2,}}>
+            Forgot password?
+          </Text>
+        </View>
       </View>
 
       <TouchableOpacity
@@ -63,14 +81,15 @@ export default function Login() {
             params: { name: login },
           })
         }
-      >
-        <Text style={{ textAlign: "center" }}>Login</Text>
+      > <View style={{opacity:0.75}}>
+        <Text style={{ textAlign: "center", fontFamily: 'e-U-t', fontSize: 24 }}>Log In</Text>
+        </View>
       </TouchableOpacity>
       <Text></Text>
-      <Text></Text>
-      <Text>
-        New to Ventreo? <Text style={{ color: "#447604" }}>Sign Up</Text>
-      </Text>
+      <View style={{flexDirection:"row", opacity: 0.75}}>
+      <Text style={{fontFamily: "e-U-t", fontSize: 15}}>
+        New to Ventreo?  </Text> <Text style={{ color: "#447604", fontFamily:"e-U-t", fontSize:15 }}>Sign Up</Text>
+      </View>
       <Text></Text>
 
       <></>
@@ -105,5 +124,9 @@ const styles = StyleSheet.create({
   },
   textinput3: {
     color: "#909090",
+    fontFamily: "e-Ukraine-ul",
+    fontSize:10,
+    marginTop: "1%",
+    marginLeft: "2%"
   },
 });
