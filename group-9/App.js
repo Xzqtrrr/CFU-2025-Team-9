@@ -111,6 +111,7 @@ export default function () {
         <Stack.Screen name="Active Startups" component={ActiveStartupsScreen} options={{headerShown: false}}/>
 
         <Stack.Screen name="PrivacyPolicy" component={PrivacyPolicyScreen} options={{headerShown: false}}/>
+         <Stack.Screen name="CreateStartUp" component={AddStartup} options={{headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

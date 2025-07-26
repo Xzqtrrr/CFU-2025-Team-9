@@ -50,7 +50,7 @@ export default function App() {
     <View style={styles.container}>
       <View style={{ flexDirection: "row", justifyContent: "center" }}></View>
             <View>
-              <Text style={{ position: "relative", marginTop: 55, fontFamily: "e-U-m", fontSize: 18 }}>
+              <Text style={{ position: "relative", marginTop: 55, fontFamily: "e-U-m", fontSize: 18, marginRight: 7}}>
                 All startups        
               </Text>
             </View>
@@ -79,11 +79,11 @@ export default function App() {
                   <Text style={styles.listItem1}>{item.nameOfStartuper}</Text>
                 </View>
                 <Text style={styles.listNameOfProject}>
-                  {item.nameOfProject}
+                  {item.nameOfProject}            
                 </Text>
-                <Text style={styles.listItem1}>
-                  <Text style={styles.listItem1}>${item.left}</Text> of $
-                  {item.total} left
+                <Text style={styles.listItem3}>
+                  <Text style={styles.listItem2}>${item.left}</Text>of$
+                  {item.total}left
                 </Text>
                 <View style={{ width: 144 }}>
                   <View
@@ -133,15 +133,25 @@ const styles = StyleSheet.create({
     backgroundColor: "#F2F2F2",
   },
   listItemName: {
-    width: "80%",
+    width: "1000000%",
     margin: 10,
     borderRadius: 25,
-    flexDirection: "row",
+    flexDirection: "row"
   },
   listItem1: {
     marginLeft: 7,
     fontFamily: 'e-U-ul',
     fontSize: 12
+  },
+  listItem3: {
+    marginLeft: 3,
+    fontFamily: 'e-U-ul',
+    fontSize: 10
+  },
+  listItem2: {
+    marginLeft: 7,
+    fontFamily: 'e-U-b',
+    fontSize: 17
   },
   listItemImage: {
     marginTop: 11,
@@ -151,10 +161,11 @@ const styles = StyleSheet.create({
     backgroundColor: "black",
   },
   listNameOfProject: {
-    width: "90%",
+    width: "1000000000000%",
     fontFamily: 'e-U-r',
     fontSize: 16,
     marginTop: -5,
-    marginBottom:7
+    marginBottom:7,
+    marginLeft: 7
   },
 });

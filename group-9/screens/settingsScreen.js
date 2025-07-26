@@ -10,7 +10,7 @@ function SettButton(prop) {
   const navigation = useNavigation()
   return (
     <View>
-      <TouchableOpacity style={styles.settButton} onPress={()=> navigation.navigate("About")}>
+      <TouchableOpacity style={styles.settButton} onPress={()=> navigation.navigate(prop.destination)}>
         <Icon name={prop.icon} size={16} color="black" />
         <Text style={{ marginLeft: 10, fontFamily: "e-U-r", fontSize: 15 }}>{prop.text}</Text>
       </TouchableOpacity>
@@ -55,7 +55,7 @@ export default function Profile() {
       <View style={{ width: "100%" }}>
         <SettButton icon={"person-outline"} text={"Account settings"} />
         <UnderLine />
-        <SettButton icon={"add-outline"} text={"Create startup"} />
+        <SettButton icon={"add-outline"} text={"Create startup"} destination={"CreateStartUp"} />
         <UnderLine />
         <SettButton icon={"heart-outline"} text={"Favourites"} />
         <UnderLine />
@@ -70,7 +70,7 @@ export default function Profile() {
         <UnderLine />
         <SettButton icon={"accessibility-outline"} text={"Accessibility"} />
         <UnderLine />
-        <SettButton icon={"information-circle-outline"} text={"About"} />
+        <SettButton icon={"information-circle-outline"} text={"About"} destination={"About"} />
       </View>
     </View>
   );
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
   },
   nickname:{
     fontSize: 25, 
-    fontFamily: "e-U-b" 
+    fontFamily: "e-U-b"
   },
   number:{
     fontFamily: "e-U-r",

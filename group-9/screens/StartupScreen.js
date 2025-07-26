@@ -8,6 +8,9 @@ import {
   TouchableOpacity,
   Image,
 } from "react-native";
+import { useEffect } from "react";
+import * as Font from 'expo-font';
+
 
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 
@@ -15,6 +18,20 @@ import Icon from "react-native-vector-icons/Ionicons";
 import { DATA } from "../databases/vars";
 
 export default function App(prop) {
+  useEffect(()=>{
+              async function loadFont() {
+                await Font.loadAsync({
+                  'e-U-l': require('../assets/fonts/e-Ukraine-Light.otf'),
+                  'e-U-m': require('../assets/fonts/e-Ukraine-Medium.otf'),
+                  'e-U-r': require('../assets/fonts/e-Ukraine-Regular.otf'),
+                  'e-U-b': require('../assets/fonts/e-Ukraine-Bold.otf'),
+                  'e-U-t': require('../assets/fonts/e-Ukraine-Thin.otf'),
+                  'e-U-ul': require('../assets/fonts/e-Ukraine-UltraLight.otf'),
+                });
+              };
+          
+              loadFont();
+            }, []);
   const navigation = useNavigation();
   const filteredData = DATA.filter(
     (item) => item.key === prop.route.params.num
@@ -26,15 +43,15 @@ export default function App(prop) {
   return (
     <View style={styles.container}>
       <View style={{ position: "relative" }}>
-        <Text style={{ marginTop: 55 }}>{filteredData[0].nameOfProject}</Text>
-        <Text>
+        <Text style={{ marginTop: 55, fontFamily: "e-U-m", fontSize: 18, marginLeft: "3%" }}>{filteredData[0].nameOfProject}</Text>
+        <Text style={{fontFamily:"e-U-ul", fontSize: 12}}>
           {" "}
           by <>{filteredData[0].nameOfStartuper}</>
         </Text>
       </View>
       <View style={{ position: "absolute", width: "100%" }}>
         <TouchableOpacity style={{ width: 75 }} onPress={navigation.goBack}>
-          <Text style={{ marginTop: 62, marginLeft: 20 }}>{"<"} Back</Text>
+          <Text style={{ marginTop: 62, marginLeft: 20, fontFamily:"e-U-l"  }}>{"<"} Back</Text>
         </TouchableOpacity>
       </View>
       <Image
@@ -46,7 +63,7 @@ export default function App(prop) {
       >
         <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
           <Text style={{ margin: "2%" }}>
-            <Text style={styles.listItem1}>${filteredData[0].left}</Text> of $
+            <Text style={styles.listItem2}>${filteredData[0].left}</Text> of $
             {filteredData[0].total} left
           </Text>
           <Text style={{ margin: "2%" }}>{Math.round(a)}%</Text>
@@ -80,8 +97,8 @@ export default function App(prop) {
         </View>
       </View>
 
-      <Text style={{ width: "98%" }}>Description</Text>
-      <Text style={{ width: "92%" }}> {filteredData[0].moreAbout} </Text>
+      <Text style={{ width: "98%",fontFamily: "e-U-ul", fontSize:12, marginTop: "2%" }}>Description</Text>
+      <Text style={{ width: "92%", fontFamily: 'e-U-r', fontSize:12, marginTop: "2%" }}> {filteredData[0].moreAbout} </Text>
     </View>
   );
 }
@@ -93,4 +110,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     //justifyContent: "center",
   },
+  listItem2:{
+    fontFamily: "e-U-b",
+    fontSize: 15
+  }
 });

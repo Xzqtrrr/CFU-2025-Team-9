@@ -40,7 +40,7 @@ export default function Login() {
           style={styles.logimage}
           source={require("../assets/treeicon.png")}
         />
-        <Text style={{fontFamily: 'e-Uh-logo', textAlign: "center", fontSize: 14, marginTop:-15, marginBottom: 15}}>Ventreo</Text>
+        <Text style={{fontFamily: 'e-Uh-logo', textAlign: "center", fontSize: 14, marginTop:-15, marginBottom: 20}}>Ventreo</Text>
       </View>
       <Text></Text>
       <View style={styles.textinput1}>
@@ -87,8 +87,8 @@ export default function Login() {
       </TouchableOpacity>
       <Text></Text>
       <View style={{flexDirection:"row", opacity: 0.75}}>
-      <Text style={{fontFamily: "e-U-t", fontSize: 15}}>
-        New to Ventreo?   </Text> <Text style={{ color: "#447604", fontFamily:"e-U-t", fontSize:15 }}>Sign Up  </Text>
+      <Text style={{fontFamily: "e-U-t", fontSize: 15, width: "33%"}}>
+        New to Ventreo?   </Text> <Text style={{ color: "#447604", fontFamily:"e-U-t", fontSize:15, width: "15%" }}>Sign Up  </Text>
       </View>
       <Text></Text>
 

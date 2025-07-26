@@ -63,7 +63,7 @@ export default function Home(prop) {
         onPress={() => navigation.navigate("Active Startups")}
           style={{ justifyContent: 'space-between', flexDirection: "row", alignItems: 'center' }}
         >
-          <Text style={{ marginLeft: 15, fontFamily: "eUt", fontSize: 12, marginTop: "2%"}}>search</Text>
+          <Text style={{ marginLeft: 15, fontFamily: "eUt", fontSize: 12, marginTop: "2%", width: "11%"}}>search</Text>
           <Icon name={"search-outline"} size={15} color="black" style={{ marginRight: 15, marginTop: "2%" }}/>
         </TouchableOpacity>
       </View>
