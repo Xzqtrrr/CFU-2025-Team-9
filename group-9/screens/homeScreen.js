@@ -47,7 +47,25 @@ export default function Home(prop) {
   //  const { screenwidth, screenheight } = useWindowDimensions();
   //  const img_margitTop = (screenwidth-151) / 2
   return (
+    
     <View style={styles.container}>
+      <View
+        style={{
+          backgroundColor: "#E1E1E1",
+          width: "75%",
+          height: 25,
+          marginTop: 52,
+          borderRadius: 15,
+        }}
+      >
+        <TouchableOpacity 
+        onPress={() => navigation.navigate("Active Startups")}
+          style={{ justifyContent: 'space-between', flexDirection: "row", alignItems: 'center' }}
+        >
+          <Text style={{ marginLeft: 15 }}>sghb</Text>
+          <Icon name={"search-outline"} size={15} color="black" style={{ marginRight: 15 }}/>
+        </TouchableOpacity>
+      </View>
       <Image style={styles.prof_img} source={require("../assets/avar.png")} />
       <Text style={{ fontFamily: "e-Ukraine-Bold", fontSize: 44 }}> Hi, User!</Text>
       <Text style={{ fontFamily: "e-Ukraine-Light", fontSize: 20 }}>What are you</Text>

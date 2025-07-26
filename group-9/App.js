@@ -12,6 +12,7 @@ import SettingsScreen from "./screens/settingsScreen.js";
 import ActiveStartupsScreen from "./screens/activeStartupsScreen.js";
 import ListOfStartupsScreen from "./screens/listOfStartupsScreen.js";
   
+import AddStartup from "./screens/addStartupScreen.js";
 import StartupScreen from "./screens/StartupScreen.js";
 import AboutScreen from './screens/AboutScreen.js'
 import TermsOfUseScreen from './screens/TermsOfUseScreen.js'
@@ -62,11 +63,11 @@ function MainTabs() {
 
           if (route.name === "Home") {
             iconName = focused ? "home" : "home-outline";
-          } else if (route.name === "Active Startups") {
+          } else if (route.name === "AddStartup") {
             iconName = focused ? "trending-up" : "trending-up-outline";
           } else if (route.name === "Profile") {
             iconName = focused ? "person" : "person-outline";
-          }
+          } 
 
           return <Ionicons name={iconName} size={size} color={color} />;
         },
@@ -79,7 +80,7 @@ function MainTabs() {
         component={HomeScreen}
         options={{ headerShown: false }}
       />
-      <Tabs.Screen name="Active Startups" component={ActiveStartupsScreen} />
+      <Tabs.Screen name="AddStartup" component={AddStartup} />
       <Tabs.Screen name="Profile" component={SettingsScreen} />
     </Tabs.Navigator>
   );
@@ -106,6 +107,9 @@ export default function () {
         <Stack.Screen name="StartupScreen" component={StartupScreen} options={{ headerShown: false }} />
         <Stack.Screen name="About" component={AboutScreen} options={{headerShown: false}}/>
         <Stack.Screen name="Terms" component={TermsOfUseScreen} options={{headerShown: false}}/>
+        
+        <Stack.Screen name="Active Startups" component={ActiveStartupsScreen} options={{headerShown: false}}/>
+
         <Stack.Screen name="PrivacyPolicy" component={PrivacyPolicyScreen} options={{headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
