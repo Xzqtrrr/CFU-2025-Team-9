@@ -9,6 +9,8 @@ import {
   TouchableOpacity,
 } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
+import { useEffect } from "react";
+import * as Font from 'expo-font';
 
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 
@@ -29,18 +31,32 @@ import { DATA } from "../databases/vars";
 // }
 
 export default function App() {
+  useEffect(()=>{
+            async function loadFont() {
+              await Font.loadAsync({
+                'e-U-l': require('../assets/fonts/e-Ukraine-Light.otf'),
+                'e-U-m': require('../assets/fonts/e-Ukraine-Medium.otf'),
+                'e-U-r': require('../assets/fonts/e-Ukraine-Regular.otf'),
+                'e-U-b': require('../assets/fonts/e-Ukraine-Bold.otf'),
+                'e-U-t': require('../assets/fonts/e-Ukraine-Thin.otf'),
+                'e-U-ul': require('../assets/fonts/e-Ukraine-UltraLight.otf'),
+              });
+            };
+        
+            loadFont();
+          }, []);
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <View style={{ flexDirection: "row", justifyContent: "center" }}></View>
             <View>
-              <Text style={{ position: "relative", marginTop: 55 }}>
-                All startups
+              <Text style={{ position: "relative", marginTop: 55, fontFamily: "e-U-m", fontSize: 18 }}>
+                All startups        
               </Text>
             </View>
             <View style={{ width: "100%" }}>
               <TouchableOpacity style={{ position: "absolute", width: 75 }} onPress={navigation.goBack}>
-                <Text style={{ marginTop: -20, marginLeft: 20 }}>{"<"} Back</Text>
+                <Text style={{ marginTop: -20, marginLeft: 20, fontFamily:"e-U-l" }}>{"<"} Back</Text>
               </TouchableOpacity>
             </View>
       <FlatList
@@ -73,7 +89,6 @@ export default function App() {
                   <View
                     style={{
                       width: "100%",
-
                       borderRadius: 3,
                       height: 5,
                       position: "absolute",
@@ -125,6 +140,8 @@ const styles = StyleSheet.create({
   },
   listItem1: {
     marginLeft: 7,
+    fontFamily: 'e-U-ul',
+    fontSize: 12
   },
   listItemImage: {
     marginTop: 11,
@@ -134,6 +151,10 @@ const styles = StyleSheet.create({
     backgroundColor: "black",
   },
   listNameOfProject: {
-    width: "80%",
+    width: "90%",
+    fontFamily: 'e-U-r',
+    fontSize: 16,
+    marginTop: -5,
+    marginBottom:7
   },
 });

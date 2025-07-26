@@ -15,6 +15,8 @@ import { NavigationContainer, useNavigation } from "@react-navigation/native";
 
 import { useState } from "react";
 export default function Login() {
+  
+
   const navigation = useNavigation();
 
   const [name, setName] = useState("");
@@ -27,7 +29,7 @@ export default function Login() {
         
         <View style={{ marginTop: 100, marginBottom: 10, height: 295, width: '100%', backgroundColor: '#E1E1E1', }}>
                 <View style={{flexDirection: 'row', justifyContent: 'center', position: 'relative', paddingTop: 295/2-8 }}><Icon name={'download-outline'} size={16} color="black" />
-                        <Text>lgsjn</Text></View>
+                        <Text>Upload</Text></View>
                         
         </View>
     <ScrollView style={{width: '95%'}}>

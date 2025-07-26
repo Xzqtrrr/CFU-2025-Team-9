@@ -38,6 +38,7 @@ export default function Home(prop) {
               'e-Ukraine-Medium': require('../assets/fonts/e-Ukraine-Medium.otf'),
               'e-Ukraine-Regular': require('../assets/fonts/e-Ukraine-Regular.otf'),
               'e-Ukraine-Bold': require('../assets/fonts/e-Ukraine-Bold.otf'),
+              'eUt': require('../assets/fonts/e-Ukraine-Thin.otf')
             });
           };
       
@@ -52,8 +53,8 @@ export default function Home(prop) {
       <View
         style={{
           backgroundColor: "#E1E1E1",
-          width: "75%",
-          height: 25,
+          width: "90%",
+          height: 30,
           marginTop: 52,
           borderRadius: 15,
         }}
@@ -62,8 +63,8 @@ export default function Home(prop) {
         onPress={() => navigation.navigate("Active Startups")}
           style={{ justifyContent: 'space-between', flexDirection: "row", alignItems: 'center' }}
         >
-          <Text style={{ marginLeft: 15 }}>sghb</Text>
-          <Icon name={"search-outline"} size={15} color="black" style={{ marginRight: 15 }}/>
+          <Text style={{ marginLeft: 15, fontFamily: "eUt", fontSize: 12, marginTop: "2%"}}>search</Text>
+          <Icon name={"search-outline"} size={15} color="black" style={{ marginRight: 15, marginTop: "2%" }}/>
         </TouchableOpacity>
       </View>
       <Image style={styles.prof_img} source={require("../assets/avar.png")} />
@@ -149,7 +150,7 @@ const styles = StyleSheet.create({
     width: 151,
     height: 151,
     marginTop: 70,
-
+    opacity: 0.75,
     borderRadius: 75,
   },
   lists1: {
