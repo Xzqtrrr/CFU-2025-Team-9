@@ -6,6 +6,8 @@ import {
   StyleSheet,
   useWindowDimensions,
 } from "react-native";
+import { useEffect } from "react";
+import * as Font from 'expo-font';
 
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 
@@ -21,7 +23,7 @@ function CustomButton(prop) {
         onPress={() => navigation.navigate("StList", { cat: cat })}
       >
         <Icon name={prop.icon} size={75} color="black" />
-        <Text>{prop.name}</Text>
+        <Text style={styles.btntext}>{prop.name}</Text>
       </TouchableOpacity>
     </View>
   );
@@ -29,15 +31,27 @@ function CustomButton(prop) {
 
 export default function Home(prop) {
   const navigation = useNavigation();
+    useEffect(()=>{
+          async function loadFont() {
+            await Font.loadAsync({
+              'e-Ukraine-Light': require('../assets/fonts/e-Ukraine-Light.otf'),
+              'e-Ukraine-Medium': require('../assets/fonts/e-Ukraine-Medium.otf'),
+              'e-Ukraine-Regular': require('../assets/fonts/e-Ukraine-Regular.otf'),
+              'e-Ukraine-Bold': require('../assets/fonts/e-Ukraine-Bold.otf'),
+            });
+          };
+      
+          loadFont();
+        }, []);
 
   //  const { screenwidth, screenheight } = useWindowDimensions();
   //  const img_margitTop = (screenwidth-151) / 2
   return (
     <View style={styles.container}>
       <Image style={styles.prof_img} source={require("../assets/avar.png")} />
-      <Text style={{ fontSize: 44 }}> Hi, {prop.route.params.name}!</Text>
-      <Text style={{ fontSize: 20 }}>What are you</Text>
-      <Text style={{ fontSize: 20 }}>going to look for today?</Text>
+      <Text style={{ fontFamily: "e-Ukraine-Bold", fontSize: 44 }}> Hi, User!</Text>
+      <Text style={{ fontFamily: "e-Ukraine-Light", fontSize: 20 }}>What are you</Text>
+      <Text style={{ fontFamily: "e-Ukraine-Light", fontSize: 20 }}>going to look for today?</Text>
       <View style={{ marginTop: 50 }}>
         <View style={styles.lists1}>
           <View style={styles.lists2}>
@@ -131,4 +145,8 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: "black",
   },
+  btntext:{
+    fontFamily: "e-Ukraine-Regular",
+    fontSize: 18,
+  }
 });
